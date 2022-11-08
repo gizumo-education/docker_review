@@ -17,7 +17,7 @@ services:
       - review-mysql
 
   review-mysql:
-    image: mysql:8
+    image: mysql:8.0
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
       - MYSQL_DATABASE=docker_review
