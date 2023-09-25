@@ -13,11 +13,9 @@ services:
       - type: bind
         source: "./php-apache/app"
         target: "/var/www/docker_review"
-    depends_on:
-      - review-mysql
       
   review-mysql:
-    image: mysql@sha256:45ad5952e4f304d39aedb02caf7e0afc30a310e66f7ab60af8acf20fd4a0f54c
+    image: mysql:8
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
       - MYSQL_DATABASE=docker_review
