@@ -12,6 +12,5 @@ index.phpの実行結果として `Congratulations` という文字列が返っ�
 - MySQLコンテナのイメージのタグは `8` を使用してください。
     - 対象のDockerイメージは[DockerHub](https://hub.docker.com/)から探してください。
 
-
 ## 課題クリア後
 穴埋めした内容をコミットしてください。
