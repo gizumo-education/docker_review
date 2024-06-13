@@ -5,19 +5,19 @@ services:
       context: ./php-apache
       dockerfile: Dockerfile
     ports:
-      - [ 1 ]:[ 2 ]
+      - "8888:80" 
     volumes:
       - type: bind
-        source: [ 3 ]
-        target: "/etc/apache2/sites-enabled/000-default.conf"
+        source: "./php-apache/000-default.conf" #ホスト側とコンテナ側で同期する
+        target: "/etc/apache2/sites-enabled/000-default.conf" #コンテナ側のファイル
       - type: bind
         source: "./php-apache/app"
-        target: [ 4 ]
-    depends_on:
-      - review-mysql
+        target: "./php-apache/app"
+    depends_on: #review-php-apacheと- review-mysqlは依存関係では無かったらだめ
+      - review-mysql  #データベースが最初に起動してPHPが起動
 
   review-mysql:
-    image: [ 5 ]
+    image: "mysql:8" #MSQL専用PC :8はバージョン
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
       - MYSQL_DATABASE=docker_review
