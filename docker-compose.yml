@@ -1,4 +1,4 @@
-version: "3.5"
+version: ""
 services:
   review-php-apache:
     build:
@@ -12,12 +12,12 @@ services:
         target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
         source: "./php-apache/app"
-        target: "/var/www/app"
+        target: "/var/www/docker_review"
     depends_on:
       - review-mysql
 
   review-mysql:
-    image: mysql@ssha256:bda6ee1f3ae5ebb3cbe9b995c9645ffbd36d7dbda3bd4b4d2ffa43d997073074
+    image: mysql:8.0
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
       - MYSQL_DATABASE=docker_review
