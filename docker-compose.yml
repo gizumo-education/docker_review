@@ -17,9 +17,9 @@ services:
       - review-mysql
 
   review-mysql:
-    image: mysql@sha256:bda6ee1f3ae5ebb3cbe9b995c9645ffbd36d7dbda3bd4b4d2ffa43d997073074
+    image: mysql@ssha256:bda6ee1f3ae5ebb3cbe9b995c9645ffbd36d7dbda3bd4b4d2ffa43d997073074
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
       - MYSQL_DATABASE=docker_review
-    # platform: linux/amd64
+    platform: linux/amd64
 
